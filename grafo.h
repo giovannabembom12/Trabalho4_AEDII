@@ -30,5 +30,7 @@ int    grafo_tem_aresta(Grafo *g, int u, int v);
 Grafo *grafo_gerar_conexo(int n, double conectividade);
 void   grafo_imprimir_lista(Grafo *g);
 int    grafo_tem_ciclo(Grafo *g);
+void  dfs_simples(Grafo *g, int u, int *visitado);
+void dfs_caminhos(Grafo *g, int u, int *visitado, int *caminho, int profundidade);
 
 #endif

@@ -119,3 +119,26 @@ int grafo_tem_ciclo(Grafo *g) {
     free(prof);
     return resultado;
 }
+
+void dfs_caminhos(Grafo *g, int u, int *visitado, int *caminho, int profundidade) {
+    caminho[profundidade] = u;
+    visitado[u] = 1;
+ 
+    for (int i = 0; i <= profundidade; i++)
+        printf("%s%d", i ? " -> " : "  ", caminho[i]);
+    printf("\n");
+ 
+    for (NoAdj *p = g->v[u].lista; p; p = p->prox)
+        if (!visitado[p->destino])
+            dfs_caminhos(g, p->destino, visitado, caminho, profundidade + 1);
+ 
+    visitado[u] = 0;
+}
+
+void dfs_simples(Grafo *g, int u, int *visitado) {
+    visitado[u] = 1;
+    printf("%d ", u);
+    for (NoAdj *p = g->v[u].lista; p; p = p->prox)
+        if (visitado[p->destino] == 0)
+            dfs_simples(g, p->destino, visitado);
+}
