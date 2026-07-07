@@ -1,7 +1,10 @@
 #include "grafo.h"
 #include "locale.h"
 #include "estatisticas.h"
+<<<<<<< HEAD
 #include "bfs.h"
+=======
+>>>>>>> 6b7776cbdfe7fe87ef2743a5065dab3f5628c42e
 
 #define num_buscas 10
 
@@ -38,6 +41,7 @@ static void questao01(void){
 
 }
  
+<<<<<<< HEAD
 static void questao02(void){
     titulo("\nQUESTÃO 2 - Busca em Largura (BFS)");
 
@@ -82,6 +86,8 @@ static void questao02(void){
     }
 }
 
+=======
+>>>>>>> 6b7776cbdfe7fe87ef2743a5065dab3f5628c42e
 static void questao03(void){
     titulo("\nQUESTÃO 3 - Busca em profundidade (DFS)");
     
@@ -205,7 +211,10 @@ int main(void) {
     titulo("TRABALHO PRÁTICO 4 – AED2 – Questão 5: Detecção de Ciclos");
 
     questao01();
+<<<<<<< HEAD
     questao02();
+=======
+>>>>>>> 6b7776cbdfe7fe87ef2743a5065dab3f5628c42e
     questao03();
     questao4();
     questao5();
