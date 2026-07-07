@@ -127,24 +127,33 @@ static void questao03(void){
 }
 
 static void questao4(void) {
-    printf("-- Questao 4: Busca em Profundidade — todas as sequencias --\n\n");
- 
-    Grafo *g = grafo_gerar_conexo(6, 0.40); //está sendo usado valores fixos para facilitar a visualização do grafo
- 
-    grafo_imprimir_lista(g);
-    printf("\n");
- 
-    int visitado[g->n];
-    int caminho[g->n];
-    memset(visitado, 0, sizeof(visitado));
- 
-    for (int i = 0; i < g->n; i++) {
-        printf("Caminhos a partir do vertice %d:\n", i);
-        dfs_caminhos(g, i, visitado, caminho, 0);
+    printf("\n-- Questão 4: Todos os caminhos por DFS --\n\n");
+
+    int    tamanhos[] = {6, 8};
+    double conects[]  = {0.40, 0.50};
+    int n = sizeof(tamanhos) / sizeof(tamanhos[0]);
+
+    for (int t = 0; t < n; t++) {
+        printf("Grafo: %d vértices | Conectividade: %.0f%%\n\n",
+               tamanhos[t], conects[t] * 100);
+
+        Grafo *g = grafo_gerar_conexo(tamanhos[t], conects[t]);
+        grafo_imprimir_lista(g);
         printf("\n");
+
+        int *visitado = calloc(g->n, sizeof(int));
+        int *caminho  = malloc(g->n * sizeof(int));
+
+        for (int i = 0; i < g->n; i++) {
+            printf("Caminhos a partir do vértice %d:\n", i);
+            dfs_caminhos(g, i, visitado, caminho, 0);
+            printf("\n");
+        }
+
+        free(visitado);
+        free(caminho);
+        grafo_destruir(g);
     }
- 
-    grafo_destruir(g);
 }
 
 static void questao5(void) {
