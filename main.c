@@ -1,10 +1,7 @@
 #include "grafo.h"
 #include "locale.h"
 #include "estatisticas.h"
-<<<<<<< HEAD
 #include "bfs.h"
-=======
->>>>>>> 6b7776cbdfe7fe87ef2743a5065dab3f5628c42e
 
 #define num_buscas 10
 
@@ -23,8 +20,6 @@ static void questao01(void){
     int vertices[] = {5,10,20,50,100};
     double porcentagens[] = {0.25, 0.50, 0.75, 1.00};
 
-
-
     printf("\n-- Questao 1: Criação de grafos com graus de conectividade variados --\n");
 
     for(int i=0; i<5; i++){         //num de grafos criados 
@@ -41,9 +36,8 @@ static void questao01(void){
 
 }
  
-<<<<<<< HEAD
 static void questao02(void){
-    titulo("\nQUESTÃO 2 - Busca em Largura (BFS)");
+    titulo("\nQUESTÃO 2: Busca em Largura (BFS)");
 
     int vertices[] = {5, 10, 20, 50, 100};
     double porcentagens[] = {0.25, 0.50, 0.75, 1.00};
@@ -86,10 +80,8 @@ static void questao02(void){
     }
 }
 
-=======
->>>>>>> 6b7776cbdfe7fe87ef2743a5065dab3f5628c42e
 static void questao03(void){
-    titulo("\nQUESTÃO 3 - Busca em profundidade (DFS)");
+    titulo("\nQUESTÃO 3: Busca em profundidade (DFS)");
     
     int ns_ciclo[] = {5, 10, 20, 50, 100};
     double cs[] = {0.25, 0.50, 0.75, 1.00};
@@ -127,9 +119,9 @@ static void questao03(void){
 }
 
 static void questao4(void) {
-    printf("\n-- Questão 4: Todos os caminhos por DFS --\n\n");
+    printf("\nQUESTÃO 4: Todos os caminhos por DFS\n\n");
 
-    int    tamanhos[] = {6, 8};
+    int tamanhos[] = {6, 8};
     double conects[]  = {0.40, 0.50};
     int n = sizeof(tamanhos) / sizeof(tamanhos[0]);
 
@@ -157,7 +149,7 @@ static void questao4(void) {
 }
 
 static void questao5(void) {
-    titulo("\nQUESTÃO 5 – Detecção de ciclos (DFS)");
+    titulo("\nQUESTÃO 5: Detecção de ciclos (DFS)");
 
     printf("\nGrafos COM ciclo (gerados aleatoriamente)\n");
     int ns_ciclo[] = {5, 10, 20, 50, 100};
@@ -199,7 +191,7 @@ static void questao5(void) {
         printf("  => %s\n", grafo_tem_ciclo(g) ? "TEM CICLO" : "sem ciclo");
         grafo_destruir(g);
     }
-//o que ta acontecendo
+
     printf("\nGrafo caminho (n = 5, sem ciclo)\n");
     {
         Grafo *g = grafo_criar(5);
@@ -217,13 +209,10 @@ int main(void) {
     setlocale(LC_ALL, "pt_BR.UTF-8");
     srand((unsigned)time(NULL));
 
-    titulo("TRABALHO PRÁTICO 4 – AED2 – Questão 5: Detecção de Ciclos");
+    titulo("TRABALHO PRÁTICO 4 – AED2");
 
     questao01();
-<<<<<<< HEAD
     questao02();
-=======
->>>>>>> 6b7776cbdfe7fe87ef2743a5065dab3f5628c42e
     questao03();
     questao4();
     questao5();
